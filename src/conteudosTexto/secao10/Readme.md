@@ -53,3 +53,61 @@ Permite acessar o índice atual, o que pode ser útil se você precisar saber a 
 É mais concisa e legível quando você não precisa do índice, apenas dos elementos.
 
 Ambas as formas são válidas, mas a escolha entre elas depende do contexto e da necessidade de acessar o índice dos elementos.
+
+## Listas
+
+ - Lista é uma estrutura de dados:
+   - Homogênea: dados do mesmo tipo
+   - Ordenada: elementos são acessados por meio de posições
+   - Inicia vazia, e seus elementos são alocados sob demanda
+   - Cada elemento ocupa um nó (ou nodo) da lista
+# Tipo (interface) List
+ - Classes que implementam: ArrayList, LinkedList, etc.
+
+### Vantagens:
+ - Tamanho variável
+ - Facilidade para realizar inserções e deleções
+### Desvantagens:
+ - Acesso sequencial aos elementos*
+
+#Demo
+ - Tamanho da lista: size()
+ - Insere elemento na lista: add(obj), add(int, obj)
+ - Remove elementos da lista: remove(obj), remove(int), removeIf(predicate)
+ - Encontrar posição de um elemento: indexOf(obj), lastIndexOf(obj)
+ - Filtrar lista com base em predicado: List<Interger> result = list.stream().filter(x -> x > 4).collect(Collectors.toList());
+ - Encontrar primeira ocorrência com base em predicado: Integer result = list.stream().filter(x -> x > 4).findFirst().orElse(null);
+
+```java
+public static void main(String[] args) {
+    List<String> list = new ArrayList<>();
+
+    list.add("Maria");
+    list.add("José");
+    list.add("Alfredo");
+    list.add("Mario");
+    list.add("Cézar");
+    list.add(2, "Lucas");
+    list.add("Laura");
+
+    System.out.println(list.size());
+    for(String name : list){
+      System.out.println(name);
+    }
+
+    System.out.println("------------------------------");
+    list.removeIf(x -> x.charAt(0) == 'M');
+
+    for(String name : list){
+      System.out.println(name);
+    }
+    System.out.println("------------------------------");
+    System.out.println("Index of Cézar: " + list.indexOf("Cézar"));
+    System.out.println("-----------------------------");
+    //primeiro convertemos pra stream, faço a operação que desejo, e converto de novo para ser uma lista
+    List<String> result = list.stream().filter(x -> x.charAt(0) == 'L').collect(Collectors.toList());
+    for(String name : result){
+      System.out.println(name);
+    }
+  }
+```
