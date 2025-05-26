@@ -1,4 +1,4 @@
-# Tratamento de exceções
+# 💻 Tratamento de exceções
 
 🌸 **Exceções em Java** 🌸
 
@@ -37,7 +37,7 @@ Throwable
 🌷 **Por que usar exceções?** 🌷
 
 ✨ O modelo de tratamento de exceções deixa tudo mais organizado e flexível, sempre seguindo boas práticas!  
-✨ Olha só as vantagens fofinhas:
+✨ Olha só as vantagens:
 
 - 🎀 Delega a lógica do erro para quem realmente entende das regras (cada classe cuida do seu jeitinho!)
 - 🎀 Organiza as exceções de vários tipos, até em hierarquia, pra ninguém se perder!
@@ -50,10 +50,10 @@ Throwable
   Aqui você coloca o código que vai rodar normalmente, mas que pode dar algum errinho inesperado!
 
 - 💖 **Bloco `catch`**  
-  Se acontecer uma exceção, esse bloco entra em ação para resolver o problema com todo carinho!  
+  Se acontecer uma exceção, esse bloco entra em ação para resolver o problema!  
   Você precisa dizer qual tipo de exceção quer tratar (pode usar upcasting, tá?).
 
-Exemplo super fofo:
+Exemplo:
 ```java
 try {
     // Código que pode dar ruim 💥
@@ -65,7 +65,7 @@ try {
 
 🌈 **Bloco finally** 🌈
 
-Às vezes, você quer garantir que um código especial seja executado, mesmo se der tudo certo ou se acontecer um errinho. Pra isso existe o bloco `finally`! ✨
+Às vezes, você quer garantir que um código especial seja executado, mesmo se der tudo certo ou se acontecer um erro. Pra isso existe o bloco `finally`! ✨
 
 Exemplo:
 ```java
